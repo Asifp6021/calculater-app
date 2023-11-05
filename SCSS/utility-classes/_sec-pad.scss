@@ -1,0 +1,9 @@
+@use '../general-styles/padding' as pad;
+
+.sec-pad {
+    padding: pad.padding-st-v(lc) pad.padding-st-h(xs);
+}
+
+.pad {
+    padding-top:  pad.padding-st-v(xl);
+}

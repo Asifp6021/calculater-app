@@ -1,0 +1,33 @@
+:root {
+	font-size: 10px;
+}
+
+// font-size
+
+$fs-st: (
+	'xl': 4rem,
+	'lc': 3.5rem,
+	'l': 3rem,
+	'mc': 2.5rem,
+	'm': 2rem,
+	'sc': 1.5rem,
+	's': 1.2rem,
+);
+
+@function font-size-st($font-s-st) {
+	@return map-get($fs-st, $font-s-st);
+}
+
+// font-weight
+
+$fw: (
+	'thin': 300,
+	'light': 400,
+	'regular': 500,
+	'medium': 600,
+	'bold': 700,
+);
+
+@function font-weight($font-w) {
+	@return map-get($fw, $font-w);
+}

@@ -1,0 +1,15 @@
+@use '../general-styles/padding' as pad;
+@use '../general-styles/typography' as type;
+
+.calculater__input--box {
+	width: 100%;
+
+	& input {
+		width: 100%;
+
+		padding: pad.padding-st-h(m) 0;
+		text-indent: 2rem;
+		font-size: type.font-size-st(m);
+		font-weight: type.font-weight(bold);
+	}
+}

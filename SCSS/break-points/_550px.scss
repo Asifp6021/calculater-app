@@ -1,0 +1,96 @@
+@use '../general-styles/padding' as pad;
+@use '../general-styles/typography' as type;
+
+@media screen and (min-width: 550px) {
+	// utitity-classes
+	.sec-pad {
+		padding: pad.padding-st-v(l) pad.padding-st-h(l);
+	}
+
+	.pad {
+		padding-top: 5rem;
+	}
+
+	// - - - -- - -- - -- - - - - - - - -- - - -- - -- - - - - -- -- - - - - --  -- - - - ---- - - --- - - -- -
+
+	.calculater {
+		max-width: 800px;
+	}
+	// heading section
+	.calculater__header {
+		&--title {
+			font-size: type.font-size-st(lc);
+		}
+
+		&--theme {
+			gap: 3.2rem;
+
+			&-title {
+				font-size: type.font-size-st(sc);
+			}
+
+			&-toggle {
+				gap: 0.5rem;
+
+				&_number {
+					gap: 3.2rem;
+					margin-left: 1.5rem;
+
+					& span {
+						font-size: type.font-size-st(sc);
+					}
+				}
+
+				&_circle {
+					padding: 0.8rem 0.8rem;
+					gap: 1.2rem;
+
+					& div {
+						padding: 0 1.2rem;
+						width: 0.8rem;
+						height: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+
+	// - - - -- - -- - -- - - - - - - - -- - - -- - -- - - - - -- -- - - - - --  -- - - - ---- - - --- - - -- -
+
+	// input section
+	.calculater__input--box {
+		& input {
+			padding: pad.padding-st-v(xl) 0;
+			text-indent: 2rem;
+			font-size: type.font-size-st(l);
+		}
+	}
+
+	// - - - -- - -- - -- - - - - - - - -- - - -- - -- - - - - -- -- - - - - --  -- - - - ---- - - --- - - -- -
+
+	// calculator section
+
+	.calculater__inputs {
+		padding: pad.padding-st-h(l);
+		gap: 2rem;
+		border-radius: 1.3rem;
+
+		&--are {
+			gap: 2rem;
+
+			& li {
+				height: 5rem;
+				font-weight: type.font-weight(bold);
+				font-size: type.font-size-st(l);
+				border-radius: 0.7rem;
+			}
+
+			.same-one,
+			.orange {
+				height: 5rem;
+				font-size: type.font-size-st(l);
+				border-radius: 0.7rem;
+			}
+		}
+	}
+}

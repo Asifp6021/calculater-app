@@ -1,0 +1,169 @@
+// initial theme value
+$theme_name: null;
+
+// this mixin create css rules means it create valid css for changing theme.
+@mixin applyThemes() {
+	@each $theme, $arr in $themes {
+		.theme-#{$theme} & {
+			$theme_name: $theme !global;
+			@content;
+		}
+	}
+}
+
+// mapping over themes to grab theme and it's propery
+@function th($property) {
+	@return map-get(map-get($themes, $theme_name), $property);
+}
+
+// created color key value for changing theme
+$themes: (
+	dark: (
+		main_background: hsl(222, 26%, 31%),
+		toggle_background_2: hsl(223, 31%, 20%),
+		keypad_background: hsl(223, 31%, 20%),
+		screen_background: hsl(224, 36%, 15%),
+		key_background_2: hsl(225, 21%, 49%),
+		key_shadow_2: hsl(224, 28%, 35%),
+		key_background_3: hsl(6, 63%, 50%),
+		toggle-background: hsl(6, 63%, 50%),
+		key_shadow_3: hsl(6, 70%, 34%),
+		key_background_1: hsl(30, 25%, 89%),
+		key_shadow_1: hsl(28, 16%, 65%),
+		text_color_1: hsl(221, 14%, 31%),
+		text_color_2: hsl(0, 0%, 100%),
+		text_color_white: hsl(0, 0%, 100%),
+		text_color_3: hsl(221, 14%, 31%),
+		text_color_4: hsl(0, 0%, 100%),
+	),
+
+	light: (
+		main_background: hsl(0, 0%, 90%),
+		toggle_background_2: hsl(0, 5%, 81%),
+		keypad_background: hsl(0, 5%, 81%),
+		screen_background: hsl(0, 0%, 93%),
+		key_background_2: hsl(185, 42%, 37%),
+		key_shadow_2: hsl(185, 58%, 25%),
+		key_background_3: hsl(25, 98%, 40%),
+		toggle-background: hsl(25, 98%, 40%),
+		key_shadow_3: hsl(25, 99%, 27%),
+		key_background_1: hsl(45, 7%, 89%),
+		key_shadow_1: hsl(35, 11%, 61%),
+		text_color_white: hsl(0, 0%, 100%),
+		text_color_2: hsl(60, 10%, 19%),
+		text_color_3: hsl(60, 10%, 19%),
+		text_color_4: hsl(0, 0%, 100%),
+	),
+
+	third: (
+		main_background: hsl(268, 75%, 9%),
+		toggle_background_2: hsl(268, 71%, 12%),
+		keypad_background: hsl(268, 71%, 12%),
+		screen_background: hsl(268, 71%, 12%),
+		key_background_2: hsl(281, 89%, 26%),
+		key_shadow_2: hsl(285, 91%, 52%),
+		key_background_3: hsl(176, 100%, 44%),
+		toggle-background: hsl(176, 100%, 44%),
+		key_shadow_3: hsl(177, 92%, 70%),
+		key_background_1: hsl(268, 47%, 21%),
+		key_shadow_1: hsl(290, 70%, 36%),
+		text_color_white: hsl(0, 0%, 100%),
+		text_color_2: hsl(52, 100%, 62%),
+		text_color_3: hsl(52, 100%, 62%),
+		text_color_4: hsl(60, 10%, 19%),
+	),
+);
+
+// adding styles
+
+body,
+section {
+	@include applyThemes() {
+		background-color: th(main_background);
+	}
+}
+
+h1,
+h3,
+span,
+input {
+	@include applyThemes() {
+		color: th(text_color_2);
+	}
+}
+
+.calculater__header--theme-toggle_circle {
+	@include applyThemes() {
+		background-color: th(toggle_background_2);
+	}
+}
+
+input {
+	@include applyThemes() {
+		background-color: th(screen_background);
+	}
+}
+
+.calculater__header--theme-toggle_circle div {
+	@include applyThemes() {
+		background-color: th(toggle-background);
+	}
+}
+
+li {
+	@include applyThemes() {
+		background-color: th(key_background_1);
+		color: th(text_color_3);
+		box-shadow: 2px 3px 2px 2px th(key_shadow_1);
+	}
+}
+
+.same-one {
+	@include applyThemes() {
+		background-color: th(key_background_2);
+		color: th(text_color_white);
+		box-shadow: 2px 3px 2px 2px th(key_shadow_2);
+	}
+}
+
+.calculater__inputs {
+	@include applyThemes() {
+		background-color: th(keypad_background);
+	}
+}
+
+.orange {
+	@include applyThemes() {
+		background-color: th(key_background_3);
+		color: th(text_color_4);
+		box-shadow: 2px 3px 2px 2px th(key_shadow_3);
+	}
+}
+
+// media Quarys
+@media screen and (min-width: 550px) {
+	li {
+		@include applyThemes() {
+			box-shadow: 4px 5px 4px 4px th(key_shadow_1);
+		}
+	}
+
+	.same-one {
+		@include applyThemes() {
+			box-shadow: 4px 5px 4px 4px th(key_shadow_2);
+		}
+	}
+
+	.orange {
+		@include applyThemes() {
+			box-shadow: 4px 5px 4px 4px th(key_shadow_3);
+		}
+	}
+}
+
+.frontend-mentor {
+	@include applyThemes() {
+		color: th(key_background_3);
+	}
+}
+

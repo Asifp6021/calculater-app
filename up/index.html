@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html
+	lang="en"
+	class="theme-dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<!-- google font link -->
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet" />
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png" />
+
+		<!-- stylesheets -->
+		<link
+			rel="stylesheet"
+			href="css/main-style.css" />
+		<link
+			rel="stylesheet"
+			href="css/theme-style.css" />
+
+		<title>Frontend Mentor | Calculator app</title>
+
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+		</style>
+	</head>
+	<body>
+		<section class="calculater sec-flex sec-pad">
+			<div class="calculater__header theme2 sec-flex">
+				<h1 class="calculater__header--title">calc</h1>
+
+				<div class="calculater__header--theme sec-flex">
+					<h3 class="calculater__header--theme-title">THEME</h3>
+
+					<div class="calculater__header--theme-toggle sec-flex">
+						<div class="calculater__header--theme-toggle_number sec-flex">
+							<span>1</span>
+							<span>2</span>
+							<span>3</span>
+						</div>
+
+						<div class="calculater__header--theme-toggle_circle sec-flex">
+							<div
+								class="toggle"
+								id="toggle1"></div>
+							<div
+								class="toggle"
+								id="toggle2"></div>
+							<div
+								class="toggle"
+								id="toggle3"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<fieldset class="calculater__input--box pad">
+				<input type="text" />
+			</fieldset>
+
+			<div class="calculater__input pad">
+				<div class="calculater__inputs sec-flex">
+					<ul class="calculater__inputs--are sec-flex">
+						<li class="key-num">7</li>
+						<li class="key-num">8</li>
+						<li class="key-num">9</li>
+						<li class="same-one">DEL</li>
+					</ul>
+
+					<ul class="calculater__inputs--are sec-flex">
+						<li class="key-num">4</li>
+						<li class="key-num">5</li>
+						<li class="key-num">6</li>
+						<li class="key-num">+</li>
+					</ul>
+
+					<ul class="calculater__inputs--are sec-flex">
+						<li class="key-num">1</li>
+						<li class="key-num">2</li>
+						<li class="key-num">3</li>
+						<li class="key-num">-</li>
+					</ul>
+
+					<ul class="calculater__inputs--are sec-flex">
+						<li class="key-num">.</li>
+						<li class="key-num">0</li>
+						<li class="key-num">/</li>
+						<li class="key-num">*</li>
+					</ul>
+
+					<div class="calculater__inputs--are sec-flex">
+						<div class="same-one">Reset</div>
+						<div class="orange">=</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="frontend-mentor">
+			Challenge by
+			<a
+				href="https://www.frontendmentor.io?ref=challenge"
+				target="_blank"
+				>Frontend Mentor</a
+			>. Coded by <a href="#">Asif Patel</a>
+		</div>
+
+		<!-- math.js library link -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.0.0/math.js"></script>
+
+		<script src="../up/app.js"></script>
+	</body>
+</html>
